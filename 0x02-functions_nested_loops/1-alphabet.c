@@ -1,12 +1,9 @@
-#include "main.h"
-
-
-	/**
-	 * print_alphabet - print all alphabet in lowercase
-	 *  
-	 * Description: 'print_alphabet - print all alphabet in lowercase'
-	 * Return: Always 0 (Success)
-	 */
+#incude "main.h"
+/**
+         * main - print _putchar
+         * is written by reem
+         * Return: 0
+         */
 
 
 	void print_alphabet(void)
