@@ -3,7 +3,9 @@
 
 	/**
 	 * print_alphabet - print all alphabet in lowercase
-	 *  Return: 0
+	 *  
+	 *  Description:print_alphabet - print all alphabet in lowercase
+	 *   Return: Always 0 (Success)
 	 */
 
 
