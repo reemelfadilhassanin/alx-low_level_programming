@@ -3,7 +3,7 @@
 /**
  * main - print _putchar
  *
- * Description: Print_alphabet - print all alphabet in lowercase
+ * Description: Print all alphabet in lowercase
  * Return: 0
  */
 
