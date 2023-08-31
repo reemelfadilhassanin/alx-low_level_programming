@@ -1,4 +1,5 @@
 #include"main.h"
+
 int sqrt1(int n, int i);
 
 /**
@@ -30,4 +31,3 @@ int sqrt1(int n, int i)
 		return (i);
 	return (sqrt1(n, i + 1));
 }
-
