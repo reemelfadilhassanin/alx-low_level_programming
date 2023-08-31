@@ -1,5 +1,6 @@
 #include"main.h"
 int sqrt1(int n, int i);
+
 /**
  * sqrt - returns the natural square root of a number
  * @n: number to calculate the square root of
