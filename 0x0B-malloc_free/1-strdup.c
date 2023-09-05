@@ -1,16 +1,16 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 /**
- * _strdup - check the code for Holberton School students.
+ * _strdup -  returns a pointer to a newly allocated space in memory,
  * @str: argument for array
  * Return: Always 0.
  */
 char *_strdup(char *str)
 {
-	char *my_array;
+	char *ptr;
 	int i, len;
 
-	my_array = malloc(sizeof(str));
+	ptr = malloc(sizeof(str));
 
 	i = len = 0;
 	while (str[i] != '\0')
@@ -19,14 +19,14 @@ char *_strdup(char *str)
 		i++;
 	}
 
-	if (my_array == NULL)
+	if (ptr == NULL)
 		return (NULL);
 	i = 0;
 	while (str[i] != '\0')
 	{
-		my_array[i] = str[i];
+		ptr[i] = str[i];
 		i++;
 	}
 
-	return (my_array);
+	return (ptr);
 }
