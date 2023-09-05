@@ -15,14 +15,14 @@ unsigned int i;
 x = malloc(size);
 
 while (i < size)
-{ 
-	if (x == NULL)
 	{
-		return (NULL);
+		if (x == NULL)
+		{
+			return (NULL);
+		}
+		x[i] = c;
+		i++;
 	}
-	x[i] = c;
-	i++;
-}
 return (x);
 }
 
