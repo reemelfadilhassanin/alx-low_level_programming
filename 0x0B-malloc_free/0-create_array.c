@@ -14,15 +14,13 @@ unsigned int i;
 
 x = malloc(size);
 
-while (i < size)
-	{
-		if (x == NULL)
-		{
-			return (NULL);
-		}
+if (size == 0 || x == NULL)
+
+		return (NULL);
+
+for (i = 0; i < size; i++)
+
 		x[i] = c;
-		i++;
-	}
 return (x);
 }
 
