@@ -1,58 +1,32 @@
-#include <stdio.h>
-		
+#include "holberton.h"
 #include <stdlib.h>
-		
-#include "main.h"
-		
 /**
-		
- * _strdup - duplicate to new memory space location
-		
- * @str: char
-		
- * Return: 0
-		
+ * _strdup - check the code for Holberton School students.
+ * @str: argument for array
+ * Return: Always 0.
  */
-		
 char *_strdup(char *str)
-		
 {
-		
-	char *aaa;
-		
-	int i, r = 0;
-		
+	char *my_array;
+	int i, len;
 
-		
-	if (str == NULL)
-		
-		return (NULL);
-		
-	i = 0;
-		
+	my_array = malloc(sizeof(str));
+
+	i = len = 0;
 	while (str[i] != '\0')
-		
+	{
+		len++;
 		i++;
-		
+	}
 
-		
-	aaa = malloc(sizeof(char) * (i + 1));
-		
-
-		
-	if (aaa == NULL)
-		
+	if (my_array == NULL)
 		return (NULL);
-		
+	i = 0;
+	while (str[i] != '\0')
+	{
+		my_array[i] = str[i];
+		i++;
+	}
 
-		
-	for (r = 0; str[r]; r++)
-		
-		aaa[r] = str[r];
-		
-
-		
-	return (aaa);
-		
+	return (my_array);
 }
-
