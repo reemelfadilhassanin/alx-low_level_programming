@@ -5,39 +5,44 @@
  * @s1: first string
  * @s2: seconed string
  * Return: concat of two string
- */
+*/
 char *str_concat(char *s1, char *s2)
 {
-	char *ptr;
-	int x, y;
+	char *copy;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
 
-	x = y = 0;
-	while (s1[x] != '\0')
-		x++;
-	while (s2[y] != '\0')
-		y++;
-	ptr = malloc(sizeof(char) * (x + y + 1));
-
-	if (x == NULL)
+	copy = malloc(sizeof(char) * (len1 + len2 + 1));
+	if (copy == NULL)
 		return (NULL);
-	x = y = 0;
-	while (s1[x] != '\0')
+
+	i = 0;
+	j = 0;
+
+	if (s1)
 	{
-		ptr[x] = s1[x];
-		x++;
+		while (i < len1)
+		{
+			copy[i] = s1[i];
+			i++;
+		}
 	}
 
-	while (s2[y] != '\0')
+	if (s2)
 	{
-		ptr[x] = s2[y];
-		x++, y++;
+		while (i < (len1 + len2))
+		{
+			copy[i] = s2[j];
+			i++;
+			j++;
+		}
 	}
-	ptr[x] = '\0';
-	return (ptr);
+	copy[i] = '\0';
+
+	return (copy);
 }
 
