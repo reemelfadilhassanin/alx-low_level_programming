@@ -5,7 +5,7 @@
 /**
  * add_node_end - function that adds a new node at list
  * @head: double pointer to the list_t list
- * str: address of string that entered
+ * @str: address of string that entered
  *
  * Return: address of the new element, or NULL if it failed
  */
