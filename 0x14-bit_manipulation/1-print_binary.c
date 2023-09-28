@@ -6,13 +6,23 @@
  */
 void print_binary(unsigned long int n)
 {
-int count = sizeof(n) * 8;
+int bit_count = sizeof(n) * 8;
+int leading_zeros = 1;
 int i;
 
-for (i = count - 1; i >= 0; i--)
+if (n == 0)
 {
-unsigned long int x = 1UL << i;
-_putchar((n & x) ? '1' : '0');
+_putchar('0');
+return;
 }
-_putchar('\n');
+
+for (i = bit_count - 1; i >= 0; i--)
+{
+unsigned long int mask = 1UL << i;
+if ((n & mask) || !leading_zeros)
+{
+_putchar((n & mask) ? '1' : '0');
+leading_zeros = 0;
+}
+}
 }
