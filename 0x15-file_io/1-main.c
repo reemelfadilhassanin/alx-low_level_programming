@@ -4,6 +4,8 @@
 
 /**
  * main - check the code
+ * @ac: int length
+ * @av: pointer of array
  *
  * Return: Always 0.
  */
