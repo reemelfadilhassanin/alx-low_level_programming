@@ -1,13 +1,13 @@
 #include "lists.h"
 
 /**
- * dlistint_t *add_dnodeint_end - function with one argument to add node at end of list
- * @head: double pointer to first node in double linked list
- * @n: value of data node
+ * add_dnodeint_end - function that adds node at the end of a list.
+ * @head: pointer to pointer to head of list.
+ * @n: data to be added.
  *
- * Description: add a new node at the end list
- * Return: address of new node or NULL
+ * Return: address of the new element or NULL if it failed.
  */
+
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node, *last;
