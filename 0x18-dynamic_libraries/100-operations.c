@@ -16,17 +16,18 @@ int div(int a, int b) {
     if (b = 0) {
         return  printf("Error: Division by zero\n");
         return 0;
-    } else {
+    } 
         
     return a / b;
-    }
+
 }
 
 int mod(int a, int b) {
-    if (b != 0) {
-        return a % b;
-    } else {
-        printf("Error: Modulo by zero\n");
+    if (b = 0) {
+        return  printf("Error: Modulo by zero\n");
         return 0;
-    }
+    } 
+       
+        return a % b;
+    
 }
