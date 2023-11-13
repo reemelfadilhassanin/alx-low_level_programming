@@ -5,10 +5,17 @@
  * Return: the absolute value of int
  */
 int _abs(int n)
+{  
+	int x;
+
+	x = n;
+	if (x >= 0)
 	{
-		if (n >= 0)
-		{
-			return (n);
-		}
-		return (-n);
+		return (x);
 	}
+	else
+	{
+		return (x * -1);
+	}
+	return (0);
+}

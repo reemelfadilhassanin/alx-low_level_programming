@@ -7,40 +7,32 @@
  */
 int _atoi(char *s)
 {
-	int x, y, n, len, f, digit;
 
-	x = 0;
-	y = 0;
-	n = 0;
-	len = 0;
-	f = 0;
-	digit = 0;
+int sign = 1;
+	unsigned int total = 0;
+	char working = 0;
 
-	while (s[len] != '\0')
-		len++;
-
-	while (x < len && f == 0)
+	while (*s)
 	{
-		if (s[x] == '-')
-			++y;
-
-		if (s[x] >= '0' && s[x] <= '9')
+		if (*s == '-')
 		{
-			digit = s[x] - '0';
-			if (y % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[x + 1] < '0' || s[x + 1] > '9')
-				break;
-			f = 0;
+			sign = sign * -1;
 		}
-		x++;
+		if (*s >= '0' && *s <= '9')
+		{
+			working = 1;
+			total = total * 10 + *s - '0';
+		}
+		else if (*s < '0' || *s > '9')
+		{
+			if (working)
+			break;
+		}
+		s++;
 	}
-
-	if (f == 0)
-		return (0);
-
-	return (n);
+	if (sign < 0)
+	{
+		total = (-(total));
+	}
+	return (total);
 }
-
