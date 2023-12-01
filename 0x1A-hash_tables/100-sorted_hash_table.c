@@ -32,14 +32,14 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
- * add_node_shash - function to adds node at shash
+ * add_n_shash - function to adds node at shash
  *
  * @h: head of the shash linked list
  * @key: pointer to key of the shash
  * @value: pointer to value to store
  * Return: return new node
  */
-shash_node_t *add_node_shash(shash_node_t **h, const char *key, const char *value)
+shash_node_t *add_n_shash(shash_node_t **h, const char *key, const char *value)
 {
 	shash_node_t *node;
 
@@ -160,7 +160,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-	unsigned long int idx;
+	unsigned long int k_index;
 	shash_node_t *tmp;
 
 	if (ht == NULL)
@@ -169,9 +169,9 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	if (key == NULL || *key == '\0')
 		return (NULL);
 
-	idx = key_index((unsigned char *)key, ht->size);
+	k_index = key_index((unsigned char *)key, ht->size);
 
-	tmp = ht->array[idx];
+	tmp = ht->array[k_index];
 
 	while (tmp != NULL)
 	{
@@ -184,7 +184,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 }
 
 /**
- * shash_print - prints the shash table
+ * shash_table_print - prints the keys and values of the shash table
  *
  * @ht: pointer to the shash table
  * Return: no return
@@ -213,7 +213,7 @@ void shash_table_print(const shash_table_t *ht)
 }
 
 /**
- * shash_table_print_rev - prints the keys and values of the shash table in reverse order
+ * shash_table_print_rev - function prints the shash table in reverse ordere
  * in reverse
  *
  * @ht: pointer to the shash table
