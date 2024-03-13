@@ -1,20 +1,21 @@
+#include <stdio.h>
 #include <math.h>
 #include "search_algos.h"
 
 /**
- * jump_search - this searches for a value using Jump search.
- * @array: a pointer to the first element of the array
- * @size: the number of elements in array
- * @value: the value to search for
- * Return: number index value otherwise -1
+ * jump_search - Searches for a value in a sorted array of integers using jump search algorithm
+ * @array: A pointer to the first element of the array to search in
+ * @size: The number of elements in array
+ * @value: The value to search for
+ *
+ * Return: The index where value is located, or -1 if value is not present in array or if array is NULL
  */
-
 int jump_search(int *array, size_t size, int value)
 {
 	int index, s, m, prev;
 
 	if (array == NULL || size == 0)
-		return (-1);
+		return -1;
 
 	s = (int)sqrt((double)size);
 	m = 0;
@@ -25,7 +26,7 @@ int jump_search(int *array, size_t size, int value)
 		printf("Value checked array[%d] = [%d]\n", index, array[index]);
 
 		if (array[index] == value)
-			return (index);
+			return index;
 		m++;
 		prev = index;
 		index = m * s;
@@ -37,8 +38,8 @@ int jump_search(int *array, size_t size, int value)
 	{
 		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
 		if (array[prev] == value)
-			return (prev);
+			return prev;
 	}
 
-	return (-1);
+	return -1;
 }
